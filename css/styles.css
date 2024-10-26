@@ -1,0 +1,55 @@
+body {
+    background-color: greenyellow;
+}
+
+
+ul {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: green;
+  }
+  
+  li {
+    display: inline-block; 
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: greenyellow;
+    color: black;
+  }
+
+.my-map {
+    height: 200px;
+    width: 50%;
+    align-content: center;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;}
+
+.reclama {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    align-items: left;
+}
+
+.adopta {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    align-items: right;
+}

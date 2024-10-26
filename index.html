@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Árbol Digital</title>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet"href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Quienes Somos</a></li>
+            <li><a href="#contact">Registro</a></li>
+            <li><a href="#login">Accede</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section class="inicio" id="home"> 
+        <div>
+            <h2>Mapa de árboles digitales.</h2>
+            <div id="my-map" style="width: 800px; height: 600px;"></div>
+            <p>Árboles adoptados.</p>
+            <script>
+                // Set map options
+                var mapOptions = {
+                    center: [-25.314933850390688, -57.603464126586914], // Coordinates
+                    zoom: 14 // Initial zoom
+                };
+
+                // Create map
+                var map = L.map('my-map', mapOptions);
+
+                // Add tile layer
+                L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                // Add a marker
+                L.marker([-25.314933850390688, -57.603464126586914]).addTo(map)
+                    .bindPopup("<b>Ubicación de ejemplo</b>").openPopup();
+            </script>
+        </div>
+    </section>
+    <section class="adopta">
+        <div>
+            <div class="reclama">
+                <h2>Avísanos de tu árbol.</h2>
+                <p>Ya tienes un árbol, entonces puedes registrarlo.</p>
+                <img scr="assets/img/big-tree.png" width="200px";>
+            </div>
+            <div class="adopta">
+                <h2>Adopta un árbol.</h2>
+                <p>Veamos que árboles puedes adoptar.</p>
+                <img src="assets/img/baby-tree.png" width="200px";>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Contact Form Section-->
+    <section class="content-section bg-light text-center" id="contact" style="padding: 4rem 0;">
+        <div class="container px-4 px-lg-5">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Contacto</h3>
+            <h2 class="section-title mb-5">Contáctanos</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+            <form id="contactForm">
+                <div class="form-group mb-3">
+                <input class="form-control form-control-lg" id="name" type="text" placeholder="Tu Nombre" required />
+                </div>
+                <div class="form-group mb-3">
+                <input class="form-control form-control-lg" id="email" type="email" placeholder="Tu Correo Electrónico" required />
+                </div>
+                <div class="form-group mb-3">
+                <textarea class="form-control form-control-lg" id="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+                </div>
+                <div>
+                <button class="btn btn-primary btn-xl btn-custom" type="submit">Enviar Mensaje</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    </section>
+ </body>
+ </html>
