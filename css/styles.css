@@ -1,55 +1,146 @@
-body {
-    background-color: greenyellow;
+/* Root Variables */ 
+:root {
+    /* Core Brand Colors */
+    --color-feather-green: #58CC02;
+    --color-mask-green: #89E219;
+    --color-eel: #4B4B4B;
+    --color-snow: #FFFFFF;
+
+    /* Secondary Colors */ 
+    --color-macaw: #1CB0F6;
+    --color-cardinal: #FF4B4B;
+    --color-bee: #FFC800;
+    --color-fox: #FF9600;
+    --color-beetle: #CE82FF;
+    --color-humpback: #2B70C9;
+
+    /* Neutrals */
+    --color-wolf: #777777;
+    --color-hare: #AFAFAF;
+    --color-swan: #E5E5E5;
+    --color-polar: #F7F7F7F7;
 }
 
+/* Global Background */
+body {
+    background-color: var(--color-wolf);
+}
 
-ul {
-    position: -webkit-sticky;
+/* Navbar styling */
+nav {
     position: sticky;
     top: 0;
+    background-color: var(--color-feather-green);
+    padding: 10px 0; /* Adjust padding for better spacing */
+    border-bottom: 2px solid var(--color-mask-green);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+    z-index: 1000; /* Ensure navbar is above other content */
+}
+
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: green;
-  }
-  
-  li {
-    display: inline-block; 
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: greenyellow;
-    color: black;
-  }
-
-.my-map {
-    height: 200px;
-    width: 50%;
-    align-content: center;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;}
-
-.reclama {
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    align-items: left;
+    display: flex;
+    justify-content: center; /* Centered items */
+    flex-wrap: nowrap; /* Prevent wrapping; items should stay in one line */
 }
 
-.adopta {
-    border: 1px solid black;
+li {
+    margin: 0 15px; /* Adds spacing between items */
+}
+
+li a {
+    display: block;
+    color: var(--color-snow);
+    text-align: center;
+    padding: 10px 20px; /* More padding for larger clickable area */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners for buttons */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+li a:hover {
+    background-color: var(--color-macaw);
+    color: var(--color-eel);
+}
+
+
+/* Map Styling */
+.my-map{
+    height: 200px;
+    width: 50%;
+    border: 1px solid var(--color-wolf);
     padding: 10px;
-    margin: 10px;
-    align-items: right;
+    margin: 10px auto;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-bee);
+    margin: auto;
+}
+/* Form Section Styling */ 
+.registra {
+    align-items: center;
+    border: 1px solid var(--color-humpback);
+    padding: 10px;
+    margin: 20px auto;
+    background-color: var(--color-snow);
+    max-width: 200px;
+    float: left;
+    
+}
+.adopta {
+    align-items: center;
+    border: 1px solid var(--color-humpback);
+    padding: 10px;
+    margin: 20px auto;
+    background-color: var(--color-snow);
+    max-width: 200px;
+    float: right;
+
+}
+
+.registra h2, .adopta h2 {
+    color: var(--color-feather-green);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.registra p, .adopta p {
+    color: var(--color-eel);
+}
+
+/* Button Styling */
+button {
+    background-color: var(--color-cardinal);
+    color: var(--color-snow);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-fox);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    li {
+        margin: 5px 0; /* Adjust margins for stacked items */
+    }
+
+    .my-map, .registra, .adopta {
+        width: 90%;
+    }
 }

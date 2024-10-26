@@ -1,0 +1,28 @@
+    <!-- Home Section -->
+    <section class="adoptados" id="map"> 
+        <h2>Mapa de árboles digitales</h2>
+        <div id="map"></div>
+        <p>Árboles adoptados.</p>
+        <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-57.63951301574708%2C-25.34301761727691%2C-57.567415237426765%2C-25.28684357074095&amp;layer=mapnik&amp;marker=-25.314933850390688%2C-57.603464126586914" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=-25.31493&amp;mlon=-57.60346#map=14/-25.31493/-57.60346">View Larger Map</a></small>        
+
+        <script>
+            // Set map options
+            var mapOptions = {
+                center: [-25.314933850390688, -57.603464126586914], // Coordinates
+                zoom: 14 // Initial zoom
+            };
+
+            // Create map
+            var map = L.map('my-map', mapOptions);
+
+            // Add tile layer
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            // Add a marker
+            L.marker([-25.314933850390688, -57.603464126586914]).addTo(map)
+                .bindPopup("<b>Ubicación de ejemplo</b>").openPopup();
+        </script>
+    </section>
